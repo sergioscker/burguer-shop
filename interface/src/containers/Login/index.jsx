@@ -2,9 +2,9 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import * as yup from 'yup';
+import { useNavigate } from 'react-router-dom';
 
-
-import Logo from '../../assets/logo-login.svg'
+import Logo from '../../assets/logo-login.svg';
 import { Button } from '../../components/Button';
 import { api } from '../../services/api';
 
@@ -15,15 +15,21 @@ import {
   LeftContainer,
   RightContainer,
   Title,
+  Link,
 } from './styles';
 
-
 export function Login() {
+  const navigate = useNavigate();
 
-  const schema = yup.object({
-    email: yup.string().email('email is a required field').required(),
-    password: yup.string().min(6, 'Password must have six caracteres').required(),
-  }).required();
+  const schema = yup
+    .object({
+      email: yup.string().email('email is a required field').required(),
+      password: yup
+        .string()
+        .min(6, 'Password must have six caracteres')
+        .required(),
+    })
+    .required();
 
   const {
     register,
@@ -34,25 +40,33 @@ export function Login() {
   });
 
   const onSubmit = async (data) => {
-    const response = await toast.promise(
+    const {
+      data: { token },
+    } = await toast.promise(
       api.post('/session', {
         email: data.email,
         password: data.password,
       }),
       {
         pending: 'Checking your data',
-        success: 'Welcome👌',
+        success: {
+          render() {
+            setTimeout(() => {
+              navigate('/');
+            }, 2000);
+            return 'Welcome👌';
+          },
+        },
         error: 'Make sure your email or password are correct 🤯',
-      }
+      },
     );
-    console.log(response);
-  }
-
+    localStorage.setItem('token', token);
+  };
 
   return (
     <Container>
       <LeftContainer>
-        <img src={Logo} alt='logo-devburger' />
+        <img src={Logo} alt="logo-devburger" />
       </LeftContainer>
       <RightContainer>
         <Title>
@@ -63,22 +77,23 @@ export function Login() {
         <Form onSubmit={handleSubmit(onSubmit)}>
           <InputContainer>
             <label>Email</label>
-            <input type='email' {...register('email')} />
+            <input type="email" {...register('email')} />
             <p>{errors?.email?.message}</p>
           </InputContainer>
 
           <InputContainer>
             <label>Password</label>
-            <input type='password' {...register('password')} />
+            <input type="password" {...register('password')} />
             <p>{errors?.password?.message}</p>
           </InputContainer>
-          <Button type='submit'>Login</Button>
+          <Button type="submit">Login</Button>
         </Form>
-        <p> Don't have an account?
-          <a> Click here.</a>
+
+        <p>
+          Don't have an account?
+          <Link to="/cadastro"> Click here. </Link>
         </p>
       </RightContainer>
-
     </Container>
-  )
-};
+  );
+}

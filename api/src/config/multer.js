@@ -5,7 +5,7 @@ import { extname, resolve } from 'node:path';
 export default {
   storage: multer.diskStorage({
     destination: resolve(__dirname, '..', '..', 'uploads'),
-    filename: (request, file, callback) =>
+    filename: (_, file, callback) =>
       callback(null, v4() + extname(file.originalname)),
   }),
 };
