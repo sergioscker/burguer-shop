@@ -18,7 +18,6 @@ export const LeftContainer = styled.div`
   height: 100%;
   width: 100%;
   max-width: 50%;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,7 +35,6 @@ export const RightContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
   height: 100%;
   width: 100%;
   max-width: 50%;

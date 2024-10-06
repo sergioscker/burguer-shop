@@ -4,16 +4,17 @@ import Product from '../models/Product';
 import Category from '../models/Category';
 import User from '../models/User';
 
-
 class OrderController {
   async store(request, response) {
     const schema = Yup.object({
-      products: Yup.array().required().of(
-        Yup.object({
-          id: Yup.number().required(),
-          quantity: Yup.number().required(),
-        }),
-      ),
+      products: Yup.array()
+        .required()
+        .of(
+          Yup.object({
+            id: Yup.number().required(),
+            quantity: Yup.number().required(),
+          }),
+        ),
     });
 
     try {
@@ -44,7 +45,6 @@ class OrderController {
       const productIndex = products.findIndex((item) => item.id === product.id);
 
       const newProduct = {
-
         id: product.id,
         name: product.name,
         category: product.category.name,
@@ -57,13 +57,12 @@ class OrderController {
     });
 
     const order = {
-
       user: {
         id: request.userId,
         name: request.userName,
       },
       products: formattedProducts,
-      status: 'Pedido realizado.',
+      status: 'Request placed.',
     };
 
     const createdOrder = await Order.create(order);
@@ -71,10 +70,10 @@ class OrderController {
     return response.status(201).json(createdOrder);
   }
 
-  async index(request, response) {
+  async index(_, response) {
     const orders = await Order.find();
 
-    return response.status(200).json(orders)
+    return response.status(200).json(orders);
   }
 
   async update(request, response) {
@@ -92,7 +91,7 @@ class OrderController {
 
     if (!isAdmin) {
       return response.status(401).json();
-    };
+    }
 
     const { id } = request.params;
     const { status } = request.body;
@@ -100,14 +99,11 @@ class OrderController {
     try {
       await Order.updateOne({ _id: id }, { status });
     } catch (err) {
-      return response.status(400).json({ error: err.message })
+      return response.status(400).json({ error: err.message });
     }
 
     return response.json({ message: 'Status updated sucessfully.' });
-
-  };
-};
-
-
+  }
+}
 
 export default new OrderController();

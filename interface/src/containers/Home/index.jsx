@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { Banner, Container, Content } from './styles';
-import { CategoriesCarousel } from '../../components/CategoriesCarousel';
+import { ProductsCarousel, CategoriesCarousel } from '../../components';
+
+import { Banner, Container } from './styles';
 
 export function Home() {
   return (
@@ -11,10 +12,10 @@ export function Home() {
       </Banner>
 
       <Container>
-        <Content>
+        <div>
           <CategoriesCarousel />
-          <div>Carrossel de Produtos</div>
-        </Content>
+          <ProductsCarousel />
+        </div>
       </Container>
     </main>
   );
