@@ -9,7 +9,7 @@ const calculateOrderAmount = (itens) => {
     return current.price * current.quantity + acc;
   }, 0);
 
-  return total * 100;
+  return total;
 };
 
 class CreatePaymentIntentController {
@@ -36,18 +36,18 @@ class CreatePaymentIntentController {
 
     const amount = calculateOrderAmount(products);
 
-    (payment_intent = await stripe.paymentIntents.create({
+    const paymentIntent = await stripe.paymentIntents.create({
       amount,
       currency: 'eur',
       automatic_payment_methods: {
         enabled: true,
       },
-    })),
-      {
-        clientSecret: payment_intent.client_secret,
-        dpmCheckerLink:
-          'https://dashboard.stripe.com/settings/payment_methods/review?transaction_id=#{payment_intent.id}',
-      }.to_json;
+    });
+
+    response.json({
+      clientSecret: paymentIntent.client_secret,
+      dpmCheckerLink: `https://dashboard.stripe.com/settings/payment_methods/review?transaction_id=${paymentIntent.id}`,
+    });
   }
 }
 export default new CreatePaymentIntentController();

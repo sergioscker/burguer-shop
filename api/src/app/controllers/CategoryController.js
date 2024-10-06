@@ -2,7 +2,6 @@ import * as Yup from 'yup';
 import Category from '../models/Category';
 import User from '../models/User';
 
-
 class CategoryController {
   async store(request, response) {
     const schema = Yup.object({
@@ -41,14 +40,13 @@ class CategoryController {
     });
 
     return response.status(201).json({ id, name });
-
   }
 
   async index(request, response) {
     const categories = await Category.findAll();
 
     return response.status(200).json(categories);
-  };
+  }
 
   async update(request, response) {
     const schema = Yup.object({
@@ -65,21 +63,22 @@ class CategoryController {
 
     if (!isAdmin) {
       return response.status(401).json();
-    };
+    }
 
     const { id } = request.params;
 
     const categoryExists = await Category.findByPk(id);
 
     if (!categoryExists) {
-      return response.status(400)
+      return response
+        .status(400)
         .json({ message: 'Make sure your category ID is correct.' });
     }
 
     let path;
     if (request.file) {
       path = request.file.filename;
-    };
+    }
 
     const { name } = request.body;
 
@@ -92,21 +91,22 @@ class CategoryController {
 
       if (categoryNameExists && categoryNameExists.id !== id) {
         return response.status(400).json({ error: 'Category already exists.' });
-      };
+      }
     }
 
-    await Category.update({
-      name,
-      path,
-    },
+    await Category.update(
+      {
+        name,
+        path,
+      },
       {
         where: {
           id,
-        }
-      });
+        },
+      },
+    );
 
     return response.status(200).json();
-
   }
 
   async index(request, response) {
@@ -114,7 +114,6 @@ class CategoryController {
 
     return response.status(200).json(categories);
   }
-
 }
 
 export default new CategoryController();

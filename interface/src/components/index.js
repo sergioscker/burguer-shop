@@ -7,4 +7,5 @@ export * from './Header';
 export * from './ProductsCarousel';
 export * from './Table';
 export * from './ItensCart';
-export * from './ResumeCart';
+export * from './CartSummary';
+export * from './Stripe/CheckoutForm';

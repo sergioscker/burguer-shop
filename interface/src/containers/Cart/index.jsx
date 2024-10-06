@@ -1,6 +1,6 @@
 import Logo from '../../assets/logo-login.svg';
 
-import { ItensCart, ResumeCart } from '../../components';
+import { ItensCart, CartSummary } from '../../components';
 
 import { Banner, Container, Content, Title } from './styles';
 
@@ -15,7 +15,7 @@ export function Cart() {
 
       <Content>
         <ItensCart />
-        <ResumeCart />
+        <CartSummary />
       </Content>
     </Container>
   );

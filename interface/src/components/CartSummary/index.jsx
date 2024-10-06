@@ -11,7 +11,7 @@ import { formatPrice } from '../../utils/FormattPrice';
 import { Button } from '../Button';
 import { Container } from './styles';
 
-export function ResumeCart() {
+export function CartSummary() {
   const [finalPrice, setFinalPrice] = useState(0);
   const [deliveryFee] = useState(500);
   const navigate = useNavigate();
@@ -28,33 +28,30 @@ export function ResumeCart() {
 
   const submitOrder = async () => {
     const products = cartProducts.map((product) => {
-      return { id: product.id, quantity: product.quantity };
+      return {
+        id: product.id,
+        quantity: product.quantity,
+        price: product.price,
+      };
     });
 
     try {
-      const { status } = await api.post(
-        '/orders',
-        { products },
-        {
-          validadeStatus: () => true,
-        },
-      );
+      const { data } = await api.post('/create-payment-intent', { products });
 
-      if (status === 200 || status === 201) {
-        setTimeout(() => {
-          navigate('/');
-        }, 2000);
-
-        clearCart();
-
-        toast.success('Order created successfully!');
-      } else if (status === 409) {
-        toast.error('Failed to complete your order');
-      } else {
-        throw new Error();
-      }
-    } catch (error) {
-      toast.error('😢System failure! Please try again');
+      navigate('/checkout', {
+        state: data,
+      });
+    } catch (err) {
+      toast.error('Error, please try again.', {
+        position: 'top-right',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light',
+      });
     }
   };
 
