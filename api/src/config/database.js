@@ -1,6 +1,10 @@
+const { config } = require('dotenv');
+
+require('dotenv').config();
+
 module.exports = {
   dialect: 'postgres',
-  url: 'postgresql://postgres:aKtvSPAxABVnNlbgAtMXqJZWHLSOGVOq@postgres.railway.internal:5432/railway',
+  url: process.env.DATABASE_URL,
   define: {
     timestamps: true,
     underscored: true,

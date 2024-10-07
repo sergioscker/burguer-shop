@@ -2,7 +2,7 @@
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('categories', {
+    await queryInterface.createTable('Categories', {
       id: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -16,12 +16,12 @@ module.exports = {
         unique: true,
       },
 
-      created_at: {
+      createdAt: {
         type: Sequelize.DATE,
         allowNull: false,
       },
 
-      updated_at: {
+      updatedAt: {
         type: Sequelize.DATE,
         allowNull: false,
       },
@@ -29,10 +29,11 @@ module.exports = {
   },
 
   async down(queryInterface) {
-    await queryInterface.dropTable('categories');
+    await queryInterface.dropTable('Categories');
   },
 };
 
-// yarn sequelize migration:create --name create-category-table (criação de migration);
-// yarn sequelize db:migrate (rodar migration no database);
-// yarn sequelize db:migrate:undo:all (delete todas as migrations do banco).
+// npx/yarn sequelize migration:create --name create-category-table (criação de migration);
+// npx/yarn sequelize db:migrate (rodar migration no database);
+// npx/yarn sequelize db:migrate:undo:all (delete todas as migrations do banco).
+// npx/yarn sequelize-cli db:migrate (subir migrations pro database).
