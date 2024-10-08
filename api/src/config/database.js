@@ -4,7 +4,7 @@ dotenv.config();
 export default {
   development: {
     dialect: 'postgres',
-    url: process.env.DATABASE_URL,
+    url: process.env.DATABASE_PUBLIC_URL,
     define: {
       timestamps: true,
       underscored: true,
