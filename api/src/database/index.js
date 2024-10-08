@@ -37,7 +37,7 @@ class Database {
   }
 
   mongo() {
-    this.mongoConnection = mongoose.connect(process.env.MONGO_URL);
+    this.mongoConnection = mongoose.connect(process.env.MONGO_PUBLIC_URL);
   }
 }
 
