@@ -1,4 +1,5 @@
-require('dotenv').config();
+import dotenv from 'dotenv';
+dotenv.config();
 import Sequelize from 'sequelize';
 import mongoose from 'mongoose';
 

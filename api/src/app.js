@@ -1,9 +1,14 @@
 import express from 'express';
 import { resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import cors from 'cors';
 
 import './database/index.js';
 import routes from './routes.js';
+
+// Em ESModules, precisa usar fileURLToPath e import.meta.url para obter __dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = resolve(__filename, '..');
 
 class App {
   constructor() {
@@ -16,6 +21,7 @@ class App {
   middlewares() {
     this.app.use(express.json());
 
+    // Servir arquivos estáticos para produtos e categorias
     this.app.use(
       '/product-file',
       express.static(resolve(__dirname, '..', 'uploads')),
@@ -31,4 +37,5 @@ class App {
     this.app.use(routes);
   }
 }
+
 export default new App().app;
