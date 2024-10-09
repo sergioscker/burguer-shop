@@ -16,8 +16,6 @@ class Database {
   }
 
   init() {
-    console.log('DATABASE_URL:', process.env.DATABASE_PUBLIC_URL);
-
     if (!process.env.DATABASE_PUBLIC_URL) {
       throw new Error(
         'DATABASE_URL is not defined in the environment variables.',
