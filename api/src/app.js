@@ -6,14 +6,19 @@ import cors from 'cors';
 import './database/index.js';
 import routes from './routes.js';
 
-// Em ESModules, precisa usar fileURLToPath e import.meta.url para obter __dirname
+//ESModules, precisa usar fileURLToPath e import.meta.url para obter __dirname
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = resolve(__filename, '..');
+
+const corsOptions = {
+  origin: 'https://burguershop-eight.vercel.app',
+  Credential: true,
+};
 
 class App {
   constructor() {
     this.app = express();
-    this.app.use(cors());
+    this.app.use(cors(corsOptions));
     this.middlewares();
     this.routes();
   }

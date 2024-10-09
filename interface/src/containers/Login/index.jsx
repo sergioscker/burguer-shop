@@ -94,7 +94,7 @@ export function Login() {
 
         <p>
           Don't have an account?
-          <Link to="/cadastro"> Click here. </Link>
+          <Link to="/register"> Click here. </Link>
         </p>
       </RightContainer>
     </Container>

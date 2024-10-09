@@ -14,6 +14,11 @@ import {
 
 export const router = createBrowserRouter([
   {
+    path: '/login',
+    element: <Login />,
+  },
+
+  {
     path: '/',
     element: (
       <>
@@ -25,18 +30,19 @@ export const router = createBrowserRouter([
   },
 
   {
-    path: '/login',
-    element: <Login />,
-  },
-
-  {
     path: '/register',
     element: <Register />,
   },
 
   {
     path: '/menus',
-    element: <Menu />,
+    element: (
+      <>
+        <Header />
+        <Menu />
+        <Footer />
+      </>
+    ),
   },
 
   {
