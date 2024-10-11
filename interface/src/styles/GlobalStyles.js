@@ -14,7 +14,9 @@ const globalStyles = createGlobalStyle`
     text-decoration: none;
 }
 
-
+body {
+    overflow-x: hidden;
+}
 
 button, a {
     cursor: pointer;
@@ -46,8 +48,6 @@ button, a {
         display: none;
     }
 }
-
-
 `;
 
 export default globalStyles;
