@@ -73,9 +73,9 @@ export function Login() {
       </LeftContainer>
       <RightContainer>
         <Title>
-          Olá, seja bem vindo ao <span>Dev Burguer!</span>
+          Hi, Welcome to <span>Burger Shop!</span>
           <br />
-          Acesse com seu <span>Login e senha.</span>
+          Acess with your <span>Login and password.</span>
         </Title>
         <Form onSubmit={handleSubmit(onSubmit)}>
           <InputContainer>

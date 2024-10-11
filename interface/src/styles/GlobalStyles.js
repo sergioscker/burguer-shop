@@ -4,7 +4,6 @@ import 'react-toastify/dist/ReactToastify.css';
 const globalStyles = createGlobalStyle` 
 
 * {
-
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -13,31 +12,41 @@ const globalStyles = createGlobalStyle`
     font-weight: 400;
     font-style: normal;
     text-decoration: none;
-};
+    overflow-x: hidden;
+}
 
 button, a {
     cursor: pointer;
 }
 
-   /* Estilos para navegadores que suportam scrollbar personalizado */
-   ::-webkit-scrollbar {
-     width: 6px;
+/* Estilos para scrollbar personalizado em telas maiores */
+
+  ::-webkit-scrollbar {
+    width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-        background: #060606;
-    }
+    background: #060606;
+}
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #FA12E3, #7312FA, #415CA7);
-  border-radius: 6px;
-  transition: background 0.3s ease;
+    background: linear-gradient(180deg, #FA12E3, #7312FA, #415CA7);
+    border-radius: 6px;
+    transition: background 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(0deg, #FA12E3, #7312FA, #415CA7);
-  border-radius: 10px;
+    background: linear-gradient(0deg, #FA12E3, #7312FA, #415CA7);
+    border-radius: 10px;
 }
+
+@media (max-width: 768px) {
+    ::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+
 `;
 
 export default globalStyles;

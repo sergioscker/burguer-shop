@@ -3,15 +3,20 @@ import styled from 'styled-components';
 import Background from '../../assets/background.svg';
 import Texture from '../../assets/texture.svg';
 
+const breakpoints = {
+  mobile: '480px',
+  tablet: '768px',
+  smallLaptop: '1024px',
+  desktop: '1280px',
+};
+
 export const Container = styled.div`
   width: 100%;
   background-color: #f0f0f0;
   min-height: 100vh;
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
-    ),
-    url('${Background}');
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+    url('${Background}') center/cover;
 `;
 
 export const Banner = styled.div`
@@ -28,6 +33,14 @@ export const Banner = styled.div`
   img {
     max-height: 140px;
   }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    height: 140px;
+
+    img {
+      max-height: 100px;
+    }
+  }
 `;
 
 export const Title = styled.h2`
@@ -41,20 +54,44 @@ export const Title = styled.h2`
   &::after {
     position: absolute;
     bottom: 0;
-    left: calc(50% + -28px);
+    left: calc(50% - 28px);
     content: '';
     width: 56px;
     height: 4px;
     background-color: #61a120;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: 24px;
+
+    &::after {
+      left: calc(50% - 20px);
+      width: 40px;
+    }
   }
 `;
 
 export const Content = styled.div`
   display: grid;
   grid-template-columns: 1fr 30%;
-  gap: 40px;
-  max-width: 1280px;
-  width: 100%;
+  gap: 30px;
+  max-width: 80%;
   padding: 40px;
   margin: 0 auto;
+
+  @media (max-width: ${breakpoints.smallLaptop}) {
+    grid-template-columns: 1fr;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    gap: 20px;
+  }
 `;
