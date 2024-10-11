@@ -12,8 +12,9 @@ const globalStyles = createGlobalStyle`
     font-weight: 400;
     font-style: normal;
     text-decoration: none;
-    overflow-x: hidden;
 }
+
+
 
 button, a {
     cursor: pointer;

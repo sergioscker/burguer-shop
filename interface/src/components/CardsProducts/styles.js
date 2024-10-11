@@ -9,6 +9,7 @@ export const Container = styled.div`
   border-radius: 8px;
   background-color: #fff;
   width: 100%;
+  height: 100%;
   cursor: grab;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   position: relative;
@@ -19,7 +20,7 @@ export const Container = styled.div`
     justify-content: space-between;
     gap: 10px;
     width: 100%;
-    height: 80px;
+    height: 100%;
 
     p {
       width: 100%;
@@ -28,6 +29,7 @@ export const Container = styled.div`
       line-height: 20px;
       font-weight: 700;
       margin-top: 40px;
+      overflow: hidden;
     }
 
     strong {
@@ -35,6 +37,7 @@ export const Container = styled.div`
       color: #363636;
       font-weight: 800;
       line-height: 20px;
+      overflow: hidden;
     }
   }
 `;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   padding-left: 40px;
   padding-bottom: 40px;
-
+  
   .sliders-carousel {
     display: flex;
     align-items: center;
@@ -46,27 +46,5 @@ export const Title = styled.h2`
     width: 56px;
     height: 4px;
     background-color: #61a120;
-  }
-`;
-
-export const ItensContent = styled.div`
-  background: url('${(props) => props.imageURL}');
-  background-size: cover;
-  background-position: center;
-  border-radius: 20px;
-  display: flex;
-  align-items: center;
-  padding: 20px 10px;
-  width: 100%;
-  height: 250px;
-
-  p {
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px 30px;
-    border-radius: 30px;
-    font-size: 22.5px;
-    font-weight: bold;
-    margin-top: 50px;
   }
 `;

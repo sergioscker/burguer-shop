@@ -1,14 +1,31 @@
-import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { ProductsCarousel, CategoriesCarousel } from '../../components';
 
-import { Banner, Container } from './styles';
+import { MainContainer, Banner, Login, Container } from './styles';
+import { useUser } from '../../hooks/UsersContext';
+import { useState } from 'react';
 
 export function Home() {
+  const navigate = useNavigate();
+  const { login } = useUser();
+  const [userLogin, setLogin] = useState('');
+
+  function handleClose() {
+    login(userLogin);
+
+    navigate('/login');
+    [setLogin];
+  }
+
   return (
-    <main>
+    <MainContainer>
       <Banner>
-        <h1>Welcome!</h1>
+        <div>
+          <h1>Welcome!</h1>
+
+          <Login onClick={handleClose}>Login</Login>
+        </div>
       </Banner>
 
       <Container>
@@ -17,6 +34,6 @@ export function Home() {
           <ProductsCarousel />
         </div>
       </Container>
-    </main>
+    </MainContainer>
   );
 }

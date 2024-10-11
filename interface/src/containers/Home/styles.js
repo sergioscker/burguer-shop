@@ -11,6 +11,10 @@ const medias = {
   xxsmall: '(max-width: 400px)',
 };
 
+export const MainContainer = styled.main`
+  overflow: hidden;
+`;
+
 export const Banner = styled.div`
   background: url('${BannerHome}') center/cover;
   min-height: 480px;
@@ -24,6 +28,11 @@ export const Banner = styled.div`
     position: absolute;
     right: 10%;
     top: 10%;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
   }
 
   @media ${medias.large} {
@@ -57,7 +66,7 @@ export const Banner = styled.div`
     min-height: 250px;
     h1 {
       font-size: 30px;
-      right: 2%;
+      right: 15%;
       top: 25%;
     }
   }
@@ -69,6 +78,28 @@ export const Banner = styled.div`
       right: 1%;
       top: 30%;
     }
+  }
+`;
+
+export const Login = styled.button`
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 50px;
+  cursor: pointer;
+  position: absolute;
+  right: 14%;
+  top: 25%;
+
+  &:hover {
+    background-color: #9758a6;
+  }
+
+  @media ${medias.small} {
+    font-size: 12px;
   }
 `;
 

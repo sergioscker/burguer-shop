@@ -18,6 +18,7 @@ export const Container = styled.div`
       rgba(255, 255, 255, 0.5)
     ),
     url('${Background}');
+  overflow: hidden;
 `;
 
 export const Banner = styled.div`
