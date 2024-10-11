@@ -11,10 +11,6 @@ const medias = {
   xxsmall: '(max-width: 400px)',
 };
 
-export const MainContainer = styled.main`
-  overflow: hidden;
-`;
-
 export const Banner = styled.div`
   background: url('${BannerHome}') center/cover;
   min-height: 480px;

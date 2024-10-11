@@ -1,30 +1,31 @@
 import { useNavigate } from 'react-router-dom';
 
 import { ProductsCarousel, CategoriesCarousel } from '../../components';
-
-import { MainContainer, Banner, Login, Container } from './styles';
 import { useUser } from '../../hooks/UsersContext';
-import { useState } from 'react';
+
+import { Banner, Login, Container } from './styles';
 
 export function Home() {
   const navigate = useNavigate();
-  const { login } = useUser();
-  const [userLogin, setLogin] = useState('');
+  const { userInfo } = useUser();
 
-  function handleClose() {
-    login(userLogin);
+  // Verifica se o usuário está logado
+  const isAuthenticated = Boolean(Object.keys(userInfo).length);
 
+  function handleLoginRedirect() {
     navigate('/login');
-    [setLogin];
   }
 
   return (
-    <MainContainer>
+    <main>
       <Banner>
         <div>
           <h1>Welcome!</h1>
 
-          <Login onClick={handleClose}>Login</Login>
+          {/* Exibe o botão de login somente se o usuário não estiver logado */}
+          {!isAuthenticated && (
+            <Login onClick={handleLoginRedirect}>Login</Login>
+          )}
         </div>
       </Banner>
 
@@ -34,6 +35,6 @@ export function Home() {
           <ProductsCarousel />
         </div>
       </Container>
-    </MainContainer>
+    </main>
   );
 }
