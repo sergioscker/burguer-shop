@@ -1,5 +1,5 @@
 import { useCart } from '../../hooks/CartContext';
-import { CartButton } from '../CardButton';
+import { CartButton } from '../CartButton';
 import { CardImage, Container } from './styles';
 
 export function CardsProducts({ product }) {

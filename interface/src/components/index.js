@@ -1,5 +1,5 @@
 export * from './Button';
-export * from './CardButton';
+export * from './CartButton';
 export * from './CardsProducts';
 export * from './CategoriesCarousel';
 export * from './Footer';
