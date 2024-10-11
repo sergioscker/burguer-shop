@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   padding-left: 40px;
   padding-bottom: 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 
   .sliders-carousel {
     display: flex;

@@ -1,5 +1,5 @@
 import { useCart } from '../../hooks/CartContext';
-import { CardButton } from '../CardButton';
+import { CartButton } from '../CardButton';
 import { CardImage, Container } from './styles';
 
 export function CardsProducts({ product }) {
@@ -14,7 +14,7 @@ export function CardsProducts({ product }) {
         <strong>{product.currencyFormatt}</strong>
       </div>
 
-      <CardButton onClick={() => putProductInCart(product)}></CardButton>
+      <CartButton onClick={() => putProductInCart(product)}></CartButton>
     </Container>
   );
 }

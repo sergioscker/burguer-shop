@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   cursor: grab;
-  overflow: hidden;
 
   .sliders-carousel {
     display: flex;

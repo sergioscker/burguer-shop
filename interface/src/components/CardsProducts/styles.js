@@ -20,7 +20,7 @@ export const Container = styled.div`
     justify-content: space-between;
     gap: 10px;
     width: 100%;
-    height: 100%;
+    height: 80%;
 
     p {
       width: 100%;
@@ -43,7 +43,7 @@ export const Container = styled.div`
 `;
 
 export const CardImage = styled.img`
-  height: 100px;
+  min-height: 100%;
   position: absolute;
   top: -50px;
 `;

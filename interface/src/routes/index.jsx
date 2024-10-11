@@ -15,7 +15,12 @@ import {
 export const router = createBrowserRouter([
   {
     path: '/login',
-    element: <Login />,
+    element: (
+      <>
+        <Login />
+        <Footer />
+      </>
+    ),
   },
 
   {
@@ -31,7 +36,12 @@ export const router = createBrowserRouter([
 
   {
     path: '/register',
-    element: <Register />,
+    element: (
+      <>
+        <Register />
+        <Footer />
+      </>
+    ),
   },
 
   {
@@ -47,7 +57,13 @@ export const router = createBrowserRouter([
 
   {
     path: '/cart',
-    element: <Cart />,
+    element: (
+      <>
+        <Header />
+        <Cart />
+        <Footer />
+      </>
+    ),
   },
 
   {
