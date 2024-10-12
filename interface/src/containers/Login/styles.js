@@ -113,7 +113,7 @@ export const Title = styled.h2`
   font-family: 'Road Rage', sans-serif;
   font-size: 40px;
   min-width: 380px;
-  text-align: left;
+  text-align: center;
   color: #ffffff;
 
   span {

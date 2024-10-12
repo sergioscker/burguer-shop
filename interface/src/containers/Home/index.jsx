@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { ProductsCarousel, CategoriesCarousel } from '../../components';
 import { useUser } from '../../hooks/UsersContext';
 
-import { Banner, Login, Container } from './styles';
+import { Banner, Login, Container, MainContainer } from './styles';
 
 export function Home() {
   const navigate = useNavigate();
@@ -17,7 +17,7 @@ export function Home() {
   }
 
   return (
-    <main>
+    <MainContainer>
       <Banner>
         <div>
           <h1>Welcome!</h1>
@@ -35,6 +35,6 @@ export function Home() {
           <ProductsCarousel />
         </div>
       </Container>
-    </main>
+    </MainContainer>
   );
 }

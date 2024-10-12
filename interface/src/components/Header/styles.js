@@ -141,6 +141,10 @@ export const Profile = styled.div`
   @media ${medias.small} {
     font-size: 12px;
     gap: 8px;
+
+    p {
+      line-height: 100%;
+    }
   }
 `;
 

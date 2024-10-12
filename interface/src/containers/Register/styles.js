@@ -45,7 +45,7 @@ export const LeftContainer = styled.div`
 
   @media ${medias.medium} {
     max-width: 100%;
-    height: 50vh;
+    height: 40vh;
 
     img {
       width: 60%;
@@ -88,9 +88,15 @@ export const RightContainer = styled.div`
     }
   }
 
+  @media ${medias.large} {
+    p {
+      font-size: 16px;
+    }
+  }
+
   @media ${medias.medium} {
     max-width: 100%;
-    height: 50vh;
+    height: 60vh;
   }
 
   @media ${medias.small} {
@@ -116,6 +122,10 @@ export const Title = styled.h2`
   font-family: 'Road Rage', sans-serif;
   font-size: 40px;
   color: #9758a6;
+
+  @media ${medias.large} {
+    font-size: 35px;
+  }
 
   @media ${medias.small} {
     font-size: 32px;
@@ -148,7 +158,7 @@ export const InputContainer = styled.div`
   input {
     width: 100%;
     border: none;
-    height: 52px;
+    min-height: 52px;
     border-radius: 5px;
     padding: 0 16px;
   }

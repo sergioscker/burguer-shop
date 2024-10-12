@@ -42,7 +42,7 @@ export function Header() {
 
         <Options>
           <Profile>
-            <UserCircle color="#fff" size={24} />
+            <UserCircle color="#fff" size={28} />
             <div>
               <p>
                 Olá, <span>{userInfo.name}</span>
@@ -53,7 +53,7 @@ export function Header() {
           </Profile>
 
           <CartContainer>
-            <ShoppingCart color="#fff" size={24} />
+            <ShoppingCart color="#fff" size={28} />
             <LinksHeader to="/cart">Cart</LinksHeader>
           </CartContainer>
         </Options>

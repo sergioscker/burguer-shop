@@ -112,7 +112,6 @@ export function Register() {
         </Form>
 
         <p>
-          {' '}
           Already have an account?
           <Link to="/login"> Sigh up</Link>
         </p>

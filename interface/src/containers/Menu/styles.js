@@ -27,10 +27,8 @@ export const Banner = styled.div`
   align-items: center;
   min-height: 480px;
   width: 100%;
-  background: url('${BannerMenu}') no-repeat;
+  background: url('${BannerMenu}') center/cover no-repeat;
   background-color: #1f1f1f;
-  background-size: cover;
-  background-position: center;
   position: relative;
 
   h1 {

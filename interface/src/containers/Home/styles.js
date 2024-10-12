@@ -11,8 +11,19 @@ const medias = {
   xxsmall: '(max-width: 400px)',
 };
 
+export const MainContainer = styled.div`
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url('${Background}');
+  overflow: hidden;
+`;
+
 export const Banner = styled.div`
-  background: url('${BannerHome}') center/cover;
+  background: url('${BannerHome}') center/cover no-repeat;
   min-height: 480px;
   width: 100%;
   position: relative;
@@ -34,7 +45,8 @@ export const Banner = styled.div`
   @media ${medias.large} {
     h1 {
       font-size: 60px;
-      right: 8%;
+      right: 15%;
+      top: 20%;
     }
   }
 
@@ -43,8 +55,8 @@ export const Banner = styled.div`
 
     h1 {
       font-size: 50px;
-      right: 5%;
-      top: 15%;
+      right: 15%;
+      top: 20%;
     }
   }
 
@@ -53,7 +65,7 @@ export const Banner = styled.div`
 
     h1 {
       font-size: 40px;
-      right: 3%;
+      right: 15%;
       top: 20%;
     }
   }
@@ -70,8 +82,8 @@ export const Banner = styled.div`
   @media ${medias.xxsmall} {
     min-height: 200px;
     h1 {
-      font-size: 24px;
-      right: 1%;
+      font-size: 30px;
+      right: 15%;
       top: 30%;
     }
   }
