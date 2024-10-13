@@ -10,9 +10,9 @@ const __dirname = resolve(__filename, '..');
 // Configuração do multer para armazenamento de arquivos
 export default {
   storage: multer.diskStorage({
-    destination: resolve(__dirname, '..', '..', 'uploads'),
+    destination: resolve(__dirname, '..', '..', 'uploads'), // diretório 'uploads'
     filename: (_, file, callback) => {
-      callback(null, uuidv4() + extname(file.originalname));
+      callback(null, uuidv4() + extname(file.originalname)); // gera um nome único
     },
   }),
 };

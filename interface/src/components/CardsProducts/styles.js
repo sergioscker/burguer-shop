@@ -4,12 +4,12 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 20px;
   padding: 20px;
   border-radius: 8px;
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
   width: 100%;
-  height: 100%;
+  height: max-content;
   cursor: grab;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   position: relative;
@@ -18,17 +18,18 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 10px;
     width: 100%;
-    height: 80%;
+    height: 100%;
+    margin-top: 50px;
 
     p {
-      width: 100%;
       font-size: 18px;
-      color: #ff8c05;
-      line-height: 20px;
+      color: rgb(255, 140, 5);
+      line-height: 30px;
       font-weight: 700;
+      width: 100%;
       margin-top: 40px;
+      padding: 15px 0;
       overflow: hidden;
     }
 
@@ -43,7 +44,7 @@ export const Container = styled.div`
 `;
 
 export const CardImage = styled.img`
-  min-height: 100%;
+  height: auto;
   position: absolute;
   top: -50px;
 `;

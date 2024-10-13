@@ -35,15 +35,15 @@ export function ItensCart() {
         {cartProducts?.length ? (
           cartProducts.map((product) => (
             <Table.Tr key={product.id}>
-              <Table.Td>
+              <Table.Td data-label="Image">
                 <ProductImage src={product.url} />
               </Table.Td>
 
-              <Table.Td>{product.name}</Table.Td>
+              <Table.Td data-label="Item Name">{product.name}</Table.Td>
 
-              <Table.Td>{product.currencyFormatt}</Table.Td>
+              <Table.Td data-label="Price">{product.currencyFormatt}</Table.Td>
 
-              <Table.Td>
+              <Table.Td data-label="Quantity">
                 <GroupButton>
                   <button onClick={() => decreaseProduct(product.id)}>-</button>
                   {product.quantity}
@@ -51,13 +51,13 @@ export function ItensCart() {
                 </GroupButton>
               </Table.Td>
 
-              <Table.Td>
+              <Table.Td data-label="Total">
                 <TotalPrice>
                   {formatPrice(product.quantity * product.price)}
                 </TotalPrice>
               </Table.Td>
 
-              <Table.Td>
+              <Table.Td data-label="Remove">
                 <TrashImage
                   src={TrashIcon}
                   alt="trash icon"
@@ -67,7 +67,7 @@ export function ItensCart() {
             </Table.Tr>
           ))
         ) : (
-          <EmptyCart>EmptyCart</EmptyCart>
+          <EmptyCart>Empty Cart</EmptyCart>
         )}
       </Table.Body>
     </Table.Root>

@@ -9,18 +9,43 @@ export const Container = styled.div`
     align-items: center;
     justify-content: center;
     padding-top: 40px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      padding-top: 20px;
+    }
   }
 
   .react-multiple-carousel__arrow--left {
     left: 60px;
     top: 50px;
     background-color: #9758a6;
+
+    @media (max-width: 768px) {
+      left: 30px;
+      top: 40px;
+    }
+
+    @media (max-width: 480px) {
+      left: 20px;
+      top: 30px;
+    }
   }
 
   .react-multiple-carousel__arrow--right {
     right: 60px;
     top: 50px;
     background-color: #9758a6;
+
+    @media (max-width: 768px) {
+      right: 30px;
+      top: 40px;
+    }
+
+    @media (max-width: 480px) {
+      right: 20px;
+      top: 30px;
+    }
   }
 `;
 
@@ -44,6 +69,21 @@ export const Title = styled.h2`
     height: 4px;
     background-color: #9758a6;
   }
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 24px;
+    margin-bottom: 20px;
+
+    &::after {
+      width: 40px;
+      height: 3px;
+    }
+  }
 `;
 
 export const ItensContent = styled.div`
@@ -56,6 +96,20 @@ export const ItensContent = styled.div`
   padding: 20px 10px;
   width: 80%;
   height: 250px;
+
+  @media (max-width: 1024px) {
+    width: 90%;
+    height: 220px;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 200px;
+  }
+
+  @media (max-width: 480px) {
+    height: 180px;
+  }
 `;
 
 export const CategoryButton = styled(Link)`
@@ -66,8 +120,20 @@ export const CategoryButton = styled(Link)`
   font-size: 22.5px;
   font-weight: 500;
   margin-top: 50px;
+  text-align: center;
 
   &:hover {
     background-color: #9758a6;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+    padding: 8px 25px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 18px;
+    padding: 6px 20px;
+    margin-top: 30px;
   }
 `;

@@ -72,7 +72,7 @@
   text-align: center;
 }
 
-/* spinner/processing state, errors */
+/* Spinner/processing state, errors */
 .spinner,
 .spinner:before,
 .spinner:after {
@@ -125,7 +125,7 @@
   animation: loading 2s infinite ease;
 }
 
-/* dynamic payment methods annotation */
+/* Dynamic payment methods annotation */
 #dpm-annotation {
   align-self: center;
   color: #353a44;
@@ -253,5 +253,25 @@ td {
   #payment-status {
     width: 80vw;
     min-width: initial;
+  }
+
+  #payment-form {
+    width: 90vw;
+    padding: 20px;
+  }
+
+  #submit {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+
+  #retry-button {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .spinner {
+    width: 16px;
+    height: 16px;
   }
 }
