@@ -20,7 +20,7 @@ class CategoryController {
       return response.status(401).json();
     }
 
-    const { filename: path } = request.file;
+    const { key: path } = request.file;
 
     const { name } = request.body;
 
@@ -76,8 +76,9 @@ class CategoryController {
     }
 
     let path;
+
     if (request.file) {
-      path = request.file.filename;
+      path = request.file.key;
     }
 
     const { name } = request.body;
@@ -109,7 +110,7 @@ class CategoryController {
     return response.status(200).json();
   }
 
-  async index(request, response) {
+  async index(_, response) {
     const categories = await Category.findAll();
 
     return response.status(200).json(categories);
