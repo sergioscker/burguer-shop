@@ -21,7 +21,6 @@ export default {
     s3,
     bucket: process.env.AWS_S3_BUCKET_NAME, // Nome do bucket no S3
     contentType: AUTO_CONTENT_TYPE, // Para definir o tipo MIME automaticamente
-    acl: 'public-read', // Definir permissões de leitura pública
     key: (_, file, callback) => {
       const fileName = `${uuidv4()}${extname(file.originalname)}`; // Nome único com uuid
       callback(null, fileName);
