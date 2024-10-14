@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
 import Product from '../models/Product.js';
-import Category from "../models/Category.js";
+import Category from '../models/Category.js';
 import User from '../models/User.js';
 
 class ProductController {
@@ -22,9 +22,9 @@ class ProductController {
 
     if (!isAdmin) {
       return response.status(401).json();
-    };
+    }
 
-    const { filename: path } = request.file;
+    const { key: path } = request.file;
 
     const { name, price, category_id, offer } = request.body;
 
@@ -37,8 +37,7 @@ class ProductController {
     });
 
     return response.status(201).json(product);
-
-  };
+  }
 
   async update(request, response) {
     const schema = Yup.object({
@@ -58,53 +57,56 @@ class ProductController {
 
     if (!isAdmin) {
       return response.status(401).json();
-    };
+    }
 
     const { id } = request.params;
     const findProduct = await Product.findByPk(id);
 
     if (!findProduct) {
-      return response.status(400)
+      return response
+        .status(400)
         .json({ error: 'Make sure your product ID is correct.' });
-    };
+    }
 
     let path;
+
     if (request.file) {
-      path = request.file.filename;
+      path = request.file.key;
     }
 
     const { name, price, category_id, offer } = request.body;
 
-    await Product.update({
-      name,
-      price,
-      category_id,
-      path,
-      offer,
-    },
+    await Product.update(
+      {
+        name,
+        price,
+        category_id,
+        path,
+        offer,
+      },
       {
         where: {
           id,
-        }
-      });
+        },
+      },
+    );
 
     return response.status(200).json();
+  }
 
-  };
-
-  async index(request, response) {
+  async index(_, response) {
     const products = await Product.findAll({
-      include: [{
-        model: Category,
-        as: 'category',
-        attributes: ['id', 'name'],
-      }],
+      include: [
+        {
+          model: Category,
+          as: 'category',
+          attributes: ['id', 'name'],
+        },
+      ],
     });
 
     return response.status(200).json(products);
-  };
-
-
+  }
 }
 
 export default new ProductController();
