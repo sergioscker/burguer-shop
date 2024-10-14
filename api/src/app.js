@@ -11,7 +11,15 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = resolve(__filename, '..');
 
 const corsOptions = {
-  origin: 'https://burguershop-eight.vercel.app',
+  origin: [
+    'https://burguershop-eight.vercel.app',
+    'https://burguershop-eight.vercel.app/login',
+    'https://burguershop-eight.vercel.app/register',
+    'https://burguershop-eight.vercel.app/menu',
+    'https://burguershop-eight.vercel.app/cart',
+    'https://burguershop-eight.vercel.app/checkout',
+    'https://burguershop-eight.vercel.app/complete',
+  ],
   Credential: true,
 };
 
