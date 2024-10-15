@@ -12,14 +12,11 @@ export const Container = styled.div`
     padding-right: 40px;
 
     @media (max-width: 768px) {
-      padding-left: 20px;
-      padding-right: 20px;
+      padding: 10px;
     }
 
     @media (max-width: 480px) {
-      flex-direction: column;
-      padding-left: 10px;
-      padding-right: 10px;
+      padding: 8px;
     }
   }
 

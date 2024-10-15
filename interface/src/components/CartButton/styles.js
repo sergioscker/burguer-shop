@@ -15,4 +15,8 @@ export const ButtonContainer = styled.button`
   &:hover {
     background-color: #6f357c;
   }
+
+  @media (max-width: 480px) {
+    padding: 10px;
+  }
 `;

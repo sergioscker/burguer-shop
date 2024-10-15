@@ -19,26 +19,62 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    height: 100%;
     margin-top: 50px;
 
+    @media (max-width: 768px) {
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 480px) {
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      margin-top: 45px;
+      padding: 15px 0;
+    }
+
     p {
-      font-size: 18px;
+      font-size: 1.1rem;
       color: rgb(255, 140, 5);
-      line-height: 30px;
+      line-height: 1.8rem;
       font-weight: 700;
       width: 100%;
       margin-top: 40px;
       padding: 15px 0;
       overflow: hidden;
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+        padding: 10px 0;
+        text-align: center;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 1rem;
+        padding: 8px 0;
+        text-align: center;
+      }
     }
 
     strong {
-      font-size: 22px;
+      font-size: 1.4rem;
       color: #363636;
       font-weight: 800;
-      line-height: 20px;
+      line-height: 1.5rem;
       overflow: hidden;
+
+      @media (max-width: 768px) {
+        font-size: 1.4rem;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+        text-align: center;
+      }
     }
   }
 `;
@@ -47,4 +83,17 @@ export const CardImage = styled.img`
   height: auto;
   position: absolute;
   top: -50px;
+  object-fit: cover;
+  width: 150px;
+
+  @media (max-width: 768px) {
+    width: 120px;
+    top: -30px;
+  }
+
+  @media (max-width: 480px) {
+    width: 100px;
+    height: 80px;
+    top: -20px;
+  }
 `;
