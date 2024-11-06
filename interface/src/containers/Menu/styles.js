@@ -13,11 +13,8 @@ const breakpoints = {
 export const Container = styled.div`
   min-height: 100vh;
   width: 100%;
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
-    ),
-    url('${Background}');
+  background: url('${Background}') center/contain;
+  background-color: #1e1e1e;
   overflow: hidden;
 `;
 

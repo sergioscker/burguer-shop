@@ -14,11 +14,6 @@ const medias = {
 export const MainContainer = styled.div`
   min-height: 100vh;
   width: 100%;
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
-    ),
-    url('${Background}');
   overflow: hidden;
 `;
 
@@ -113,10 +108,10 @@ export const Login = styled.button`
 
 export const Container = styled.section`
   width: 100%;
-  background:
-    linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
-    url('${Background}') center/cover;
-  padding: 20px;
+  height: 100vh;
+  background: url('${Background}') center/contain;
+  background-color: #1e1e1e;
+  padding: 25px;
   box-sizing: border-box;
 
   @media ${medias.large} {

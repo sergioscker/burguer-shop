@@ -43,8 +43,10 @@ export const CategoriesCarousel = () => {
 
   return (
     <Container>
+      <div>
       <Title>Categories</Title>
-
+      </div>
+      
       <Carousel
         responsive={responsive}
         infinite={true}
