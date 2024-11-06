@@ -11,12 +11,10 @@ const breakpoints = {
 };
 
 export const Container = styled.div`
+  background: url('${Background}') center/contain;
+  background-color: #1e1e1e;
   width: 100%;
-  background-color: #f0f0f0;
   min-height: 100vh;
-  background:
-    linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
-    url('${Background}') center/cover;
 `;
 
 export const Banner = styled.div`

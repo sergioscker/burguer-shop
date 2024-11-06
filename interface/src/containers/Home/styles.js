@@ -12,12 +12,17 @@ const medias = {
 };
 
 export const MainContainer = styled.div`
+  background: url('${Background}') center/contain;
+  background-color: #1e1e1e;
   min-height: 100vh;
   width: 100%;
   overflow: hidden;
 `;
 
 export const Banner = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: url('${BannerHome}') center/cover no-repeat;
   min-height: 480px;
   width: 100%;
@@ -108,10 +113,7 @@ export const Login = styled.button`
 
 export const Container = styled.section`
   width: 100%;
-  height: 100vh;
-  background: url('${Background}') center/contain;
-  background-color: #1e1e1e;
-  padding: 25px;
+  padding: 20px;
   box-sizing: border-box;
 
   @media ${medias.large} {

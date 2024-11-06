@@ -11,10 +11,10 @@ const breakpoints = {
 };
 
 export const Container = styled.div`
-  min-height: 100vh;
-  width: 100%;
   background: url('${Background}') center/contain;
   background-color: #1e1e1e;
+  min-height: 100vh;
+  width: 100%;
   overflow: hidden;
 `;
 
