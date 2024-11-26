@@ -5,21 +5,26 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  padding: 20px;
+  padding: 15px;
   border-radius: 10px;
   background-color: rgb(255, 255, 255);
+  max-width: 200px;
   width: 100%;
-  height: max-content;
+  min-height: 100%;
   cursor: grab;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   position: relative;
+
+  @media (max-width: 480px) {
+    gap: 10px;
+  }
 
   div {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    margin-top: 50px;
+    text-align: center;
 
     @media (max-width: 768px) {
       justify-content: center;
@@ -32,18 +37,17 @@ export const Container = styled.div`
       justify-content: center;
       align-items: center;
       gap: 15px;
-      margin-top: 45px;
-      padding: 15px 0;
+      padding: 10px 0;
     }
 
     p {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       color: rgb(255, 140, 5);
       line-height: 1.8rem;
       font-weight: 700;
       width: 100%;
-      margin-top: 40px;
-      padding: 15px 0;
+      margin-top: 32px;
+      padding: 20px 0px;
       overflow: hidden;
 
       @media (max-width: 768px) {
@@ -60,7 +64,7 @@ export const Container = styled.div`
     }
 
     strong {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       color: #363636;
       font-weight: 800;
       line-height: 1.5rem;

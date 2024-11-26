@@ -27,7 +27,7 @@ export const Container = styled.div`
     }
 
     @media (max-width: 480px) {
-      left: 20px;
+      left: -20px;
       top: 30px;
     }
   }
@@ -43,7 +43,7 @@ export const Container = styled.div`
     }
 
     @media (max-width: 480px) {
-      right: 20px;
+      right: -20px;
       top: 30px;
     }
   }
