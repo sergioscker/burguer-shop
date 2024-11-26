@@ -31,24 +31,27 @@ export const Container = styled.div`
 
     @media (max-width: 768px) {
       left: 30px;
+      top: 40px;
+
     }
 
     @media (max-width: 480px) {
-      left: -20px;
+      left: 20px;
       top: 30px;
     }
 
     .react-multiple-carousel__arrow--right {
-      right: 100px;
-      top: 20px;
+      right: 60px;
+      top: 50px;
       background-color: #9758a6;
 
       @media (max-width: 768px) {
-        right: 60px;
+        right: 30px;
+        top: 40px;
       }
 
       @media (max-width: 480px) {
-        right: -20px;
+        right: 20px;
         top: 30px;
       }
     }
@@ -77,7 +80,7 @@ export const Title = styled.h2`
 
   @media (max-width: 768px) {
     font-size: 28px;
-    margin: 50px 0;
+    margin-bottom: 30px;
   }
 
   @media (max-width: 480px) {

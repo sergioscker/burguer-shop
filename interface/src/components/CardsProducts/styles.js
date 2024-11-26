@@ -15,7 +15,6 @@ export const Container = styled.div`
   position: relative;
 
   @media (max-width: 480px) {
-    max-width: 250px;
     padding: 15px;
     gap: 10px;
   }
@@ -60,6 +59,8 @@ export const Container = styled.div`
       @media (max-width: 480px) {
         font-size: 1rem;
         padding: 8px 0;
+        line-height: normal;
+        width: 100vw;
         text-align: center;
       }
     }
