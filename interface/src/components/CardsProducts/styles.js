@@ -5,10 +5,9 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  padding: 15px;
+  padding: 20px;
   border-radius: 10px;
   background-color: rgb(255, 255, 255);
-  max-width: 200px;
   width: 100%;
   min-height: 100%;
   cursor: grab;
@@ -16,6 +15,8 @@ export const Container = styled.div`
   position: relative;
 
   @media (max-width: 480px) {
+    max-width: 250px;
+    padding: 15px;
     gap: 10px;
   }
 

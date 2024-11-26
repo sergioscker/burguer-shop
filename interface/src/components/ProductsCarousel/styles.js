@@ -34,21 +34,23 @@ export const Container = styled.div`
     }
 
     @media (max-width: 480px) {
-      left: 20px;
-    }
-  }
-
-  .react-multiple-carousel__arrow--right {
-    right: 100px;
-    top: 20px;
-    background-color: #9758a6;
-
-    @media (max-width: 768px) {
-      right: 60px;
+      left: -20px;
+      top: 30px;
     }
 
-    @media (max-width: 480px) {
-      right: 40px;
+    .react-multiple-carousel__arrow--right {
+      right: 100px;
+      top: 20px;
+      background-color: #9758a6;
+
+      @media (max-width: 768px) {
+        right: 60px;
+      }
+
+      @media (max-width: 480px) {
+        right: -20px;
+        top: 30px;
+      }
     }
   }
 `;
