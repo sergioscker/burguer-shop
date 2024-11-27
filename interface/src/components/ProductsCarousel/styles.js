@@ -25,14 +25,13 @@ export const Container = styled.div`
   }
 
   .react-multiple-carousel__arrow--left {
-    left: 60px;
-    top: 10px;
+    left: 20px;
+    top: 6px;
     background-color: #9758a6;
 
     @media (max-width: 768px) {
       left: 30px;
       top: 40px;
-
     }
 
     @media (max-width: 480px) {
@@ -42,7 +41,7 @@ export const Container = styled.div`
 
     .react-multiple-carousel__arrow--right {
       right: 60px;
-      top: 50px;
+      top: 6px;
       background-color: #9758a6;
 
       @media (max-width: 768px) {
